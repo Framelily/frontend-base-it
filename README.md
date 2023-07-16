@@ -1,2 +1,12 @@
 # frontend-base-it
-frontend 
+- nextjs
+- typescript
+- ant.design
+- tailwindcss
+- axios
+- @tanstack/react-query
+- next-auth
+- next-i18next
+- sass
+- eslint
+- prettier
