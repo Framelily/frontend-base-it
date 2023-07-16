@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "ourService": "Our Service",
+    "service01": "Service 01",
+    "service02": "Service 02",
+    "service03": "Service 03",
+    "news": "News",
+    "aboutUs": "About Us"
+  },
+  "login": "Login"
+}
