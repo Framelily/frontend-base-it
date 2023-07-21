@@ -2,21 +2,20 @@ import type { NextPage } from 'next'
 
 import { useTranslation } from 'next-i18next'
 
-import PageLayout from '@/layouts'
 import { DEFAULT_LOCALE } from '@/configs/locale'
 import { makeServerSideProps } from '@/libs/getServerSide'
+import BackofficeLayout from '@/layouts/BackofficeLayout'
 
-const IndexPage: NextPage = () => {
+const UserDashboardPage: NextPage = () => {
   const { t } = useTranslation(['common'])
+
   return (
-    <PageLayout title="หน้าแรก">
-      <div className="container mx-auto py-5">
-        <h1 className="text-center">BODY</h1>
-      </div>
-    </PageLayout>
+    <BackofficeLayout title="Dashboard">
+      <h1>TEST ADMIN</h1>
+    </BackofficeLayout>
   )
 }
 
 export const getServerSideProps = makeServerSideProps([...DEFAULT_LOCALE])
 
-export default IndexPage
+export default UserDashboardPage

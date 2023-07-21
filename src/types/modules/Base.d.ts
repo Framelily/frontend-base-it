@@ -3,10 +3,6 @@ export type IPaginationQuery = {
   limit?: number
 }
 
-export type IToken = {
-  token: string
-}
-
 export interface IMenuItem {
   label: string
   path: string

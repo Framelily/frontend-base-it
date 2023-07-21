@@ -16,7 +16,7 @@ const BackofficeLayout: FC<IProps> = ({ title, children }) => {
   return (
     <Fragment>
       <NextHead>
-        <title>{'CyberRichSMS | ' + title}</title>
+        <title>{'ITFRAMETI | ' + title}</title>
         {/* <meta name="description" content="" /> */}
         {/* <meta name="keywords" content="" /> */}
         {/* <meta name="author" content="Doomovie" /> */}
@@ -28,7 +28,6 @@ const BackofficeLayout: FC<IProps> = ({ title, children }) => {
         <Sidebar />
         <div className="w-full">
           <div className="container-backoffice">{children}</div>
-          <Footer />
         </div>
       </div>
     </Fragment>

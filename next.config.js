@@ -8,7 +8,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['cdn.sportmonks.com', 'storage.googleapis.com'],
+    domains: ['storage.googleapis.com'],
     formats: ['image/avif', 'image/webp'],
   },
 }

@@ -15,7 +15,7 @@ const PageLayout: FC<IProps> = ({ title, children }) => {
   return (
     <Fragment>
       <NextHead>
-        <title>{'CyberRichSMS | ' + title}</title>
+        <title>{'ITFRAMETI | ' + title}</title>
         {/* <meta name="description" content="" /> */}
         {/* <meta name="keywords" content="" /> */}
         {/* <meta name="author" content="Doomovie" /> */}

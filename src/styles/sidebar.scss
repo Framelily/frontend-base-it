@@ -2,10 +2,10 @@
   position: relative;
   .sidebar {
     width: 256px;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 70px);
     height: 100%;
     background: #fff;
-    box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    border-right: 1px solid #ccccccb5;
     padding: 18px 0px;
     position: relative;
     overflow-y: auto;

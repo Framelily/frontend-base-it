@@ -13,12 +13,10 @@ import { DownOutlined, MenuOutlined } from '@ant-design/icons'
 import Logo from '../../public/images/logo.png'
 
 import menu from '@/configs/menu'
-import useAuth from '@/hooks/Auth'
 
 const HeaderMenu: NextPage = () => {
   const { t } = useTranslation(['common'])
   const { asPath, locale, route } = useRouter()
-  const auth = useAuth()
   const [menuMobile, setMenuMobile] = useState<boolean>(false)
 
   const checkOnClick = () => {
@@ -53,15 +51,10 @@ const HeaderMenu: NextPage = () => {
   return (
     <Fragment>
       <div className="header-menu">
-        <div
-          className={
-            route.search('/user') === 0 || route.search('/admin') === 0
-              ? 'px-5 h-full mx-auto'
-              : 'container h-full mx-auto'
-          }>
+        <div className={route.search('/admin') === 0 ? 'px-5 h-full mx-auto' : 'container h-full mx-auto'}>
           <div className="mobile-menu">
             <Link href="/">
-              <Image src={Logo} width={130} height={42} alt="logo-sms" />
+              <Image src={Logo} width={160} height={53} alt="logo-sms" />
             </Link>
             <MenuOutlined className="cursor-pointer" onClick={checkOnClick} />
           </div>
@@ -70,7 +63,7 @@ const HeaderMenu: NextPage = () => {
               <Link href="/">
                 <Image src={Logo} width={202} height={42} alt="logo-sms" />
               </Link>
-              {route.search('/user') !== 0 && route.search('/admin') !== 0 && (
+              {route.search('/admin') !== 0 && (
                 <div className="list">
                   {menu.map((item, index) =>
                     item.list.length > 0 ? (
@@ -102,8 +95,7 @@ const HeaderMenu: NextPage = () => {
                         key={index}
                         href={item.path}
                         className={item.path === route ? 'item active' : 'item'}
-                        onClick={checkOnClick}
-                        target={item.label === 'สำหรับนักพัฒนา' ? '_blank' : ''}>
+                        onClick={checkOnClick}>
                         {t(item.label)}
                       </Link>
                     ),
@@ -112,39 +104,31 @@ const HeaderMenu: NextPage = () => {
               )}
             </div>
             <div className="group-btn">
-              {auth.userInfo && (
-                <Fragment>
-                  <Dropdown
-                    placement="bottomRight"
-                    className="pr-3"
-                    overlay={
-                      <Menu>
-                        <Menu.Item key="setting">
-                          <Link href="/user/setting" className="item-profile">
-                            ตั้งค่าบัญชีผู้ใช้งาน
-                          </Link>
-                        </Menu.Item>
-                        <Menu.Item key="logout">
-                          <div className="item-profile" onClick={() => auth.logout()}>
-                            ออกจากระบบ
-                          </div>
-                        </Menu.Item>
-                      </Menu>
-                    }>
-                    <Space className="cursor-pointer">
-                      คุณ{auth.userInfo?.displayName}
-                      <DownOutlined className="icon-arrow-down" />
-                    </Space>
-                  </Dropdown>
-                </Fragment>
-              )}
-              {!auth.userInfo && (
-                <Fragment>
-                  <Link href="login" className="ant-btn">
-                    {t('login')}
-                  </Link>
-                </Fragment>
-              )}
+              {/* <Dropdown
+                placement="bottomRight"
+                className="pr-3"
+                overlay={
+                  <Menu>
+                    <Menu.Item key="setting">
+                      <Link href="/user-setting" className="item-profile">
+                        ตั้งค่าบัญชีผู้ใช้งาน
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item key="logout">
+                      <div className="item-profile" onClick={() => auth.logout()}>
+                        ออกจากระบบ
+                      </div>
+                    </Menu.Item>
+                  </Menu>
+                }>
+                <Space className="cursor-pointer">
+                  คุณสมชาย
+                  <DownOutlined className="icon-arrow-down" />
+                </Space>
+              </Dropdown> */}
+              <Link href="login" className="ant-btn">
+                {t('login')}
+              </Link>
               <Dropdown menu={{ items }} placement="bottomRight">
                 <Button className="btn-dark">{locale.toLocaleUpperCase()}</Button>
               </Dropdown>

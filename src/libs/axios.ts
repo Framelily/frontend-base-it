@@ -1,6 +1,5 @@
 import type { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import Axios from 'axios'
-import { getCookie } from 'cookies-next'
 
 const axios = Axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
@@ -11,7 +10,7 @@ const axios = Axios.create({
 
 axios.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    config.headers.Authorization = 'Bearer ' + getCookie('acc-token')
+    config.headers.Authorization = 'Bearer ' + ''
     return config
   },
   (error: AxiosError) => {
