@@ -23,12 +23,14 @@ const BackofficeLayout: FC<IProps> = ({ title, children }) => {
         {/* <link rel="canonical" href="" /> */}
         <meta name="robots" content="index, follow" />
       </NextHead>
-      <HeaderMenu />
       <div className="backoffice-layout">
         <Sidebar />
-        <div className="w-full">
-          <div className="container-backoffice">{children}</div>
-        </div>
+        <Fragment>
+          <div className="w-full">
+            <HeaderMenu />
+            <div className="container-backoffice">{children}</div>
+          </div>
+        </Fragment>
       </div>
     </Fragment>
   )

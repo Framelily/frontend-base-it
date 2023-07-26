@@ -3,8 +3,6 @@ import NextAuth from 'next-auth/next'
 
 export const authOptions: NextAuthOptions = {
   providers: [],
-  pages: {},
-  callbacks: {},
 }
 
 export default NextAuth(authOptions)
